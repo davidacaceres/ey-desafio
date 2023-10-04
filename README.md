@@ -36,12 +36,12 @@ Implementacion de microservicio restfull que esta compuesto por los paquetes:
 
 ## API referencia
 
-#### Obtiene lista de usuarios
+### Obtiene lista de usuarios
 
 ```http
   GET /api/v1/usuario
 ```
-Retorno:
+#### Retorno:
 ```json
 
 [
@@ -53,7 +53,7 @@ Retorno:
     }
 ]
 ```
-Diagrama de secuencia Listar Usuarios
+#### Diagrama de secuencia Listar Usuarios
 
 ![Diagrama Listar Usuarios](https://github.com/davidacaceres/ey-desafio/blob/main/doc/secuencia_listar_usuarios.png)
 
