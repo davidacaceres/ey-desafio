@@ -53,14 +53,14 @@ Implementacion de microservicio restfull que esta compuesto por los paquetes:
     }
 ]
 ```
-#### Diagrama de secuencia Listar Usuarios
+#### Diagrama de secuencia
 
 ![Diagrama Listar Usuarios](https://github.com/davidacaceres/ey-desafio/blob/main/doc/secuencia_listar_usuarios.png)
 
 
 
 
-#### Obtiene un usuario por uuid
+### Ver usuario
 
 ```http
   GET /api/v1/usuario/${uuid}
@@ -70,8 +70,7 @@ Implementacion de microservicio restfull que esta compuesto por los paquetes:
 | :-------- | :------- | :-------------------------------- |
 | `uuid`      | `string` | **Requerido**. Id de usuario a buscar |
 
-Retorna Json con el siguiente formato:
-
+#### Retorno:
 ```json
 {
     "uuid": "3ff1d8d2-3d45-4315-946f-7790316c7767",
@@ -89,6 +88,12 @@ Retorna Json con el siguiente formato:
     ]
 }
 ```
+
+#### Diagrama de secuencia
+
+![Diagrama ver usuario](https://github.com/davidacaceres/ey-desafio/blob/main/doc/secuencia_ver_usuarios.png)
+
+
 
 #### Crea un usuario 
 
