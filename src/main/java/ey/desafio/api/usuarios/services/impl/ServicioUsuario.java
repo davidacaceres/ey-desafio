@@ -102,12 +102,12 @@ public class ServicioUsuario implements IServicioUsuario {
 		eUsuario.setEmail(usuario.getEmail());
 		eUsuario.setName(usuario.getName());
 		eUsuario.setPassword(usuario.getPassword());
+		List<Telefono> currentPhones = new ArrayList<>(eUsuario.getPhones());
 //		eUsuario.setToken();
 		if (usuario.getPhones() == null
-				|| usuario.getPhones().isEmpty() && eUsuario.getPhones() != null && !eUsuario.getPhones().isEmpty()) {
-			eUsuario.setPhones(new ArrayList<>());
+				|| usuario.getPhones().isEmpty() && currentPhones != null && !currentPhones.isEmpty()) {
+			eUsuario.getPhones().removeAll(currentPhones);
 		} else {
-			List<Telefono> currentPhones = new ArrayList<>(eUsuario.getPhones());
 			List<Telefono> ePhones = new ArrayList<>();
 			for (TOPhone oPhone : usuario.getPhones()) {
 				Telefono ePhone = FactoryUsuario.mapPhone(oPhone);
