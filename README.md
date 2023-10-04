@@ -53,6 +53,12 @@ Retorno:
     }
 ]
 ```
+Diagrama de secuencia Listar Usuarios
+
+![Diagrama Listar Usuarios](https://github.com/davidacaceres/ey-desafio/blob/main/doc/secuencia_listar_usuarios.png)
+
+
+
 
 #### Obtiene un usuario por uuid
 
