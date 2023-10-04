@@ -5,13 +5,26 @@
 
 
 ## Organización de codigo:
+Herramientas:
+- editor eclipse
+- base de datos: HSQLDB en memoria, creacion de base de datos con hibernate
+- build: gradle
+- spring-framework: 2.7.16
 
 Estructura de paquetes:
 
 ![Imagen](https://github.com/davidacaceres/ey-desafio/blob/main/doc/organizacion_paquetes.png)
 
 
-
+- ey.desafio.api.usuarios.controller: paquete con controlador de usuarios
+- ey.desafio.api.usuarios.dom: paquete con entidades
+- ey.desafio.api.usuarios.ex: paquete con excepciones y controlador de excepciones
+- ey.desafio.api.usuarios.factory: paquete con factory para transformacion de entity a objetos de transferencia y viceversa
+- ey.desafio.api.usuarios.jwt: paquete con la implementacion de generador de jwt
+- ey.desafio.api.usuarios.repo: paquete con interfaces de JPA repository para usuarios
+- ey.desafio.api.usuarios.to: paquete con implementacion de objetos de transferencia
+- ey.desafio.api.usuarios.validators: paquete con la implementacion de validador de email
+- ey.desafio.api.usuarios: paquete con la clase AppUsuario que inicializa el microservicio
 # Desafio EY
 
 Implementacion de microservicio restfull que esta compuesto por los paquetes:
