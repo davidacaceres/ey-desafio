@@ -49,4 +49,7 @@ logging:
   level:
     root: INFO
     '[ey.desafio.api.usuarios]': debug
-
+token:
+ key: ZL2ZYOcCa0FBijSUVK+77DDwgAw6xHB5NCSSS28CJ/M=
+ valid:
+  milliseconds: 86400000  # Token válido durante 24 horas

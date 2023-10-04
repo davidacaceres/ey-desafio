@@ -15,6 +15,7 @@ import ey.desafio.api.usuarios.dom.Usuario;
 import ey.desafio.api.usuarios.ex.ExEmailAlreadyAssign;
 import ey.desafio.api.usuarios.ex.ExUserNotFound;
 import ey.desafio.api.usuarios.factory.FactoryUsuario;
+import ey.desafio.api.usuarios.jwt.ITokenProvider;
 import ey.desafio.api.usuarios.repo.IRepoTelefono;
 import ey.desafio.api.usuarios.repo.IRepoUsuario;
 import ey.desafio.api.usuarios.services.IServicioUsuario;
@@ -36,6 +37,9 @@ public class ServicioUsuario implements IServicioUsuario {
 	@Autowired
 	IRepoTelefono repoPhone;
 
+	@Autowired
+	ITokenProvider tkProvider;
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<TOListUser> getUsers() {
@@ -50,6 +54,7 @@ public class ServicioUsuario implements IServicioUsuario {
 		Usuario user = Usuario.builder().email(pUser.getEmail()).isActive(true).name(pUser.getName())
 				.password(pUser.getPassword()).token(token).build();
 
+		user.setToken(tkProvider.generate(pUser.getEmail()));
 		if (pUser.getPhones() != null && !pUser.getPhones().isEmpty()) {
 			List<Telefono> ePhones = new ArrayList<>();
 			for (TOPhone iPhone : pUser.getPhones()) {
@@ -103,7 +108,8 @@ public class ServicioUsuario implements IServicioUsuario {
 		eUsuario.setName(usuario.getName());
 		eUsuario.setPassword(usuario.getPassword());
 		List<Telefono> currentPhones = new ArrayList<>(eUsuario.getPhones());
-//		eUsuario.setToken();
+		eUsuario.setToken(tkProvider.generate(usuario.getEmail()));
+
 		if (usuario.getPhones() == null
 				|| usuario.getPhones().isEmpty() && currentPhones != null && !currentPhones.isEmpty()) {
 			eUsuario.getPhones().removeAll(currentPhones);
