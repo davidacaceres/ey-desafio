@@ -16,7 +16,6 @@ import ey.desafio.api.usuarios.ex.ExEmailAlreadyAssign;
 import ey.desafio.api.usuarios.ex.ExUserNotFound;
 import ey.desafio.api.usuarios.factory.FactoryUsuario;
 import ey.desafio.api.usuarios.jwt.ITokenProvider;
-import ey.desafio.api.usuarios.repo.IRepoTelefono;
 import ey.desafio.api.usuarios.repo.IRepoUsuario;
 import ey.desafio.api.usuarios.services.IServicioUsuario;
 import ey.desafio.api.usuarios.to.RequestUserCreate;
@@ -25,17 +24,12 @@ import ey.desafio.api.usuarios.to.ResponseUser;
 import ey.desafio.api.usuarios.to.TOListUser;
 import ey.desafio.api.usuarios.to.TOPhone;
 import ey.desafio.api.usuarios.to.TOUser;
-import lombok.extern.slf4j.Slf4j;
 
 @Service
-@Slf4j
 public class ServicioUsuario implements IServicioUsuario {
 
 	@Autowired
 	IRepoUsuario repoUser;
-
-	@Autowired
-	IRepoTelefono repoPhone;
 
 	@Autowired
 	ITokenProvider tkProvider;
