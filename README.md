@@ -36,7 +36,7 @@ Implementacion de microservicio restfull que esta compuesto por los paquetes:
 
 ## API referencia
 
-### Obtiene lista de usuarios
+### Listar usuarios
 
 ```http
   GET /api/v1/usuario
