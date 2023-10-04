@@ -95,7 +95,7 @@ Implementacion de microservicio restfull que esta compuesto por los paquetes:
 
 
 
-#### Crea un usuario 
+#### Crear usuario 
 
 ```http
   POST /api/v1/usuario
@@ -116,14 +116,14 @@ El cuerpo del metodo post debe contener el json con el siguiente formato:
     ]
 }
 ```
-#### Actualiza un usuario 
+#### Actualizar usuario 
 
-El metodo put permite actualizar los datos de un usuario, adicionalmente agrega, actualiza o elimina telefonos dependiendo de la existencia del uuid del elemento y  en cada actualizacion regenera el token.
+Permite actualizar los datos de un usuario, adicionalmente agrega, actualiza o elimina telefonos dependiendo de la existencia del uuid del elemento y  en cada actualizacion regenera el token.
 
 ```http
   PUT /api/v1/usuario
 ```
-El cuerpo del metodo post debe contener el json con el siguiente formato:
+El cuerpo del metodo put debe contener el json con el siguiente formato:
 
 ```json
 {
