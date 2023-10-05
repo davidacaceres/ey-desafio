@@ -116,6 +116,12 @@ El cuerpo del metodo post debe contener el json con el siguiente formato:
     ]
 }
 ```
+#### Diagrama de secuencia
+
+![Diagrama Crear Usuario](https://github.com/davidacaceres/ey-desafio/blob/main/doc/secuencia_crear_usuarios.png)
+
+
+
 #### Actualizar usuario 
 
 Permite actualizar los datos de un usuario, adicionalmente agrega, actualiza o elimina telefonos dependiendo de la existencia del uuid del elemento y  en cada actualizacion regenera el token.
