@@ -148,6 +148,10 @@ El cuerpo del metodo put debe contener el json con el siguiente formato:
     ]
 }
 ```
+#### Diagrama de secuencia
+
+![Diagrama Actualizar Usuario](https://github.com/davidacaceres/ey-desafio/blob/main/doc/secuencia_actualizar_usuarios.png)
+
 
 #### Eliminar un usuario por uuid
 
