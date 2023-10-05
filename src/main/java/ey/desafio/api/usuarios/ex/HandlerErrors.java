@@ -48,7 +48,7 @@ public class HandlerErrors extends ResponseEntityExceptionHandler {
 //	}
 
 	@ExceptionHandler(value = { ExUuidNotFound.class, ExUuidInvalid.class, ExEmailAlreadyAssign.class })
-	public ResponseEntity<Object> handleUuidInvalidException(ExDesafio exception, WebRequest request) {
+	public ResponseEntity<Object> handleDesafioException(ExDesafio exception, WebRequest request) {
 		return new ResponseEntity<>(getBody(exception.getMessage()), HttpStatus.BAD_REQUEST);
 	}
 
