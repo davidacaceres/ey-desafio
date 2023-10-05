@@ -61,7 +61,6 @@ public class ServicioUsuario implements IServicioUsuario {
 
 		try {
 			ResponseUser response = FactoryUsuario.mapReqUser(repoUser.saveAndFlush(user));
-			System.out.println(user);
 			response.setUser(FactoryUsuario.mapUsuario(user));
 			return response;
 		} catch (org.springframework.dao.DataIntegrityViolationException e) {
@@ -101,11 +100,11 @@ public class ServicioUsuario implements IServicioUsuario {
 		eUsuario.setEmail(usuario.getEmail());
 		eUsuario.setName(usuario.getName());
 		eUsuario.setPassword(usuario.getPassword());
-		List<Telefono> currentPhones = new ArrayList<>(eUsuario.getPhones());
+		List<Telefono> currentPhones = eUsuario.getPhones() == null ? new ArrayList<>()
+				: new ArrayList<>(eUsuario.getPhones());
 		eUsuario.setToken(tkProvider.generate(usuario.getEmail()));
 
-		if (usuario.getPhones() == null
-				|| usuario.getPhones().isEmpty() && currentPhones != null && !currentPhones.isEmpty()) {
+		if (usuario.getPhones() == null || usuario.getPhones().isEmpty()) {
 			eUsuario.getPhones().removeAll(currentPhones);
 		} else {
 			List<Telefono> ePhones = new ArrayList<>();
